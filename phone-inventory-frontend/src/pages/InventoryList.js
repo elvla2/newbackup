@@ -26,27 +26,30 @@ const InventoryList = () => {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
             <th>Brand</th>
-            <th>Price</th>
+            <th>Name</th>
             <th>Stock</th>
+            <th>Price</th>
+            <th>Total Value (Stock × Price)</th>
           </tr>
         </thead>
         <tbody>
           {phones.map((phone) => (
             <tr key={phone.id}>
-              <td>{phone.name}</td>
               <td>{phone.brand}</td>
-              <td>${phone.price}</td>
+              <td>{phone.name}</td>
               <td>{phone.stock}</td>
+              <td>${phone.price}</td>
+              <td>${(phone.stock * phone.price).toFixed(2)}</td>
             </tr>
           ))}
           {/* Totals Row */}
           <tr className="totals-row">
             <td><strong>Total Products:</strong> {totals.totalProducts}</td>
             <td></td>
-            <td><strong>Total Inventory Value:</strong> ${totals.totalValue}</td>
             <td><strong>Total Stock:</strong> {totals.totalStock}</td>
+            <td></td>
+            <td><strong>Total Inventory Value:</strong> ${totals.totalValue}</td>
           </tr>
         </tbody>
       </table>
