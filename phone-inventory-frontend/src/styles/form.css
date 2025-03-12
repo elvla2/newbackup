@@ -12,3 +12,17 @@
     margin-bottom: 10px;
     padding: 8px;
   }
+
+  .back-button {
+    background-color: #ccc;
+    border: none;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .back-button:hover {
+    background-color: #bbb;
+  }
+  

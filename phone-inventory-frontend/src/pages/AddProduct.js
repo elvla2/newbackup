@@ -14,12 +14,18 @@ const AddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await addPhone(formData);
-    navigate('/');
+    navigate('/'); // Redirect to inventory list after adding
   };
 
   return (
     <div className="container">
       <h2>Add New Phone</h2>
+      
+      {/* Back to Inventory Button */}
+      <button className="back-button" onClick={() => navigate('/')}>
+        ← Back to Inventory
+      </button>
+
       <form onSubmit={handleSubmit}>
         <input type="text" name="name" placeholder="Phone Name" onChange={handleChange} required />
         <input type="text" name="brand" placeholder="Brand" onChange={handleChange} required />
