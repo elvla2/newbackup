@@ -28,4 +28,21 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.get('/totals', async (req, res) => {
+  try {
+    const totalPhones = await pool.query('SELECT COUNT(*) AS total_products FROM phones');
+    const totalStock = await pool.query('SELECT SUM(stock) AS total_stock FROM phones');
+    const totalValue = await pool.query('SELECT SUM(price * stock) AS total_value FROM phones');
+
+    res.json({
+      totalProducts: totalPhones.rows[0].total_products,
+      totalStock: totalStock.rows[0].total_stock,
+      totalValue: totalValue.rows[0].total_value
+    });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
 module.exports = router;

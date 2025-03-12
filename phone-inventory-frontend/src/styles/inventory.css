@@ -18,4 +18,12 @@
   th {
     background-color: #f4f4f4;
   }
+  .totals-row {
+    font-weight: bold;
+    background-color: #f4f4f4;
+  }
+  
+  .totals-row td {
+    padding: 10px;
+  }
   
