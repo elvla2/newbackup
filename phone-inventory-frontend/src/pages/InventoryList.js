@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { getPhones, getInventoryTotals } from '../services/api';
+import { getItems, getInventoryTotals } from '../services/api'; // ✅ Updated import
 import { Link } from 'react-router-dom';
 import '../styles/inventory.css';
 
 const InventoryList = () => {
-  const [phones, setPhones] = useState([]);
+  const [items, setItems] = useState([]);
   const [totals, setTotals] = useState({ totalProducts: 0, totalStock: 0, totalValue: 0 });
 
   useEffect(() => {
@@ -12,40 +12,40 @@ const InventoryList = () => {
   }, []);
 
   const fetchInventory = async () => {
-    const data = await getPhones();
+    const data = await getItems();
     const totalData = await getInventoryTotals();
-    setPhones(data);
+    setItems(data);
     setTotals(totalData);
   };
 
   return (
     <div className="container">
-      <h1>Phone Inventory</h1>
-      <Link to="/add">Add New Phone</Link>
+      <h1>Item Inventory</h1>
+      <Link to="/add">Add New Item</Link>
       
       <table>
         <thead>
           <tr>
-            <th>Brand</th>
-            <th>Name</th>
+            <th>Name</th> {/* Changed from Brand to Name */}
+            <th>Item Name</th> {/* This was previously Name */}
             <th>Stock</th>
             <th>Price</th>
             <th>Total Value (Stock × Price)</th>
           </tr>
         </thead>
         <tbody>
-          {phones.map((phone) => (
-            <tr key={phone.id}>
-              <td>{phone.brand}</td>
-              <td>{phone.name}</td>
-              <td>{phone.stock}</td>
-              <td>${phone.price}</td>
-              <td>${(phone.stock * phone.price).toFixed(2)}</td>
+          {items.map((item) => (
+            <tr key={item.id}>
+              <td>{item.brand}</td>
+              <td>{item.name}</td>
+              <td>{item.stock}</td>
+              <td>${item.price}</td>
+              <td>${(item.stock * item.price).toFixed(2)}</td>
             </tr>
           ))}
           {/* Totals Row */}
           <tr className="totals-row">
-            <td><strong>Total Products:</strong> {totals.totalProducts}</td>
+            <td><strong>Total Items:</strong> {totals.totalProducts}</td>
             <td></td>
             <td><strong>Total Stock:</strong> {totals.totalStock}</td>
             <td></td>
