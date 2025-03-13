@@ -29,7 +29,7 @@ const InventoryList = () => {
             <th>SKU</th> {/* Changed from Brand to Name */}
             <th>Item Name</th> {/* This was previously Name */}
             <th>Stock</th>
-            <th>Price</th>
+            <th>Cost</th>
             <th>Total Value (Stock × Price)</th>
           </tr>
         </thead>
