@@ -26,7 +26,7 @@ const InventoryList = () => {
       <table>
         <thead>
           <tr>
-            <th>Name</th> {/* Changed from Brand to Name */}
+            <th>SKU</th> {/* Changed from Brand to Name */}
             <th>Item Name</th> {/* This was previously Name */}
             <th>Stock</th>
             <th>Price</th>
