@@ -21,8 +21,12 @@ const InventoryList = () => {
   return (
     <div className="container">
       <h1>Item Inventory</h1>
-      <Link to="/add">Add New Item</Link>
-      
+
+      {/* Styled Add New Item Button */}
+      <div className="button-container">
+        <Link to="/add" className="add-item-button">➕ Add New Item</Link>
+      </div>
+
       <table>
         <thead>
           <tr>

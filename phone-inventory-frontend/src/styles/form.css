@@ -1,28 +1,85 @@
+/* General Form Layout */
 .container {
-    width: 50%;
-    margin: auto;
+  width: 50%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.container:hover {
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Input Fields & Buttons */
+input, button {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Input Fields */
+input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0px 0px 6px rgba(0, 123, 255, 0.5);
+}
+
+/* Primary Button */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Back Button */
+.back-button {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 12px 18px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.back-button:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 80%;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
   }
-  
+
   input, button {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
+    font-size: 15px;
     padding: 8px;
   }
 
   .back-button {
-    background-color: #ccc;
-    border: none;
-    padding: 10px 15px;
-    margin-bottom: 15px;
-    cursor: pointer;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 15px;
   }
-  
-  .back-button:hover {
-    background-color: #bbb;
-  }
-  
+}

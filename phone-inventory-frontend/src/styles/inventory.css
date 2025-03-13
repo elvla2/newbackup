@@ -1,29 +1,169 @@
+/* General Page Layout */
 .container {
-    width: 80%;
-    margin: auto;
+  width: 85%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.container:hover {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Table Headers */
+th {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 16px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Table Cells */
+td {
+  padding: 14px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  font-size: 15px;
+  transition: background 0.2s ease-in-out;
+}
+
+/* Alternating Row Colors */
+tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+/* Table Row Hover Effect */
+tr:hover {
+  background: rgba(0, 123, 255, 0.15);
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+/* Totals Row */
+.totals-row {
+  font-weight: bold;
+  background-color: #f4f4f4;
+}
+
+.totals-row td {
+  padding: 14px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Buttons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Button Base */
+.edit-button,
+.delete-button {
+  border: none;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Edit Button */
+.edit-button {
+  background: #ffcc00;
+  color: #333;
+}
+
+.edit-button:hover {
+  background: #e0b800;
+  transform: scale(1.08);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Delete Button */
+.delete-button {
+  background: #ff4d4d;
+  color: white;
+}
+
+.delete-button:hover {
+  background: #d43c3c;
+  transform: scale(1.08);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95%;
     padding: 20px;
   }
-  
+
   table {
-    width: 100%;
-    border-collapse: collapse;
+    font-size: 14px;
   }
-  
+
   th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
+    padding: 12px;
   }
-  
-  th {
-    background-color: #f4f4f4;
+
+  .edit-button,
+  .delete-button {
+    padding: 10px 14px;
+    font-size: 13px;
   }
-  .totals-row {
-    font-weight: bold;
-    background-color: #f4f4f4;
-  }
-  
-  .totals-row td {
-    padding: 10px;
-  }
-  
+}
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+/* Add New Item Button */
+.add-item-button {
+  background: #28a745;
+  color: white;
+  text-decoration: none;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.add-item-button:hover {
+  background: #218838;
+  transform: scale(1.05);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
