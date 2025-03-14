@@ -112,6 +112,13 @@ const InventoryList = () => {
               </td>
             </tr>
           ))}
+              <tr className="totals-row">
+              <td colSpan="4"><strong>Total:</strong></td>
+              <td><strong>{items.reduce((sum, item) => sum + item.stock, 0).toLocaleString()}</strong></td>
+              <td></td>
+              <td><strong>${items.reduce((sum, item) => sum + (item.stock * item.price), 0).toLocaleString()}</strong></td>
+              <td></td>
+            </tr>
         </tbody>
       </table>
     </div>
