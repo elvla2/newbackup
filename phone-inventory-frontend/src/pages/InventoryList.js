@@ -53,9 +53,12 @@ const InventoryList = () => {
           ))}
           {/* Totals Row */}
           <tr className="totals-row">
-            <td><strong>Total Items:</strong> {totals.totalProducts}</td>
-            <td></td>
+          <td></td>
+          <td></td> 
+          <td></td>
+          <td></td>      
             <td><strong>Total Stock:</strong> {totals.totalStock}</td>
+                 
             <td></td>
             <td><strong>Total Inventory Value:</strong> ${totals.totalValue}</td>
           </tr>

@@ -62,14 +62,14 @@ tr:hover {
 .totals-row {
   font-weight: bold;
   background-color: #f4f4f4;
+  text-align: right;
 }
 
 .totals-row td {
   padding: 14px;
   font-size: 16px;
-  color: #333;
+  text-align: center;
 }
-
 /* Buttons */
 .button-container {
   display: flex;
