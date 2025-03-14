@@ -36,31 +36,30 @@ const InventoryList = () => {
             <th>color</th>
             <th>Stock</th>
             <th>Cost</th>
-            <th>Total Value (Stock × Price)</th>
+            <th>Total Cost</th>
           </tr>
         </thead>
         <tbody>
-          {items.map((item) => (
-            <tr key={item.id}>
-              <td>{item.brand}</td>
-              <td>{item.name}</td>
-              <td>{item.memory}</td>
-              <td>{item.color}</td>
-              <td>{item.stock}</td>
-              <td>${item.price}</td>
-              <td>${(item.stock * item.price).toFixed(2)}</td>
-            </tr>
-          ))}
+  {items.map((item) => (
+    <tr key={item.id}>
+      <td>{item.sku}</td>
+      <td>{item.name}</td>
+      <td>{item.memory}</td>
+      <td>{item.color}</td>
+      <td>{item.stock.toLocaleString()}</td>
+      <td>${item.price.toLocaleString()}</td>
+      <td>${(item.stock * item.price).toLocaleString()}</td>
+    </tr>
+  ))}
           {/* Totals Row */}
           <tr className="totals-row">
           <td></td>
           <td></td> 
           <td></td>
           <td></td>      
-            <td><strong>Total Stock:</strong> {totals.totalStock}</td>
-                 
-            <td></td>
-            <td><strong>Total Inventory Value:</strong> ${totals.totalValue}</td>
+          <td><strong>Total Stock:</strong> {totals.totalStock.toLocaleString()}</td>                 
+          <td></td>
+          <td><strong>Total Inventory Value:</strong> ${totals.totalValue.toLocaleString()}</td>
           </tr>
         </tbody>
       </table>

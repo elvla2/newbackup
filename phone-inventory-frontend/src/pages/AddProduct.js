@@ -6,7 +6,7 @@ import '../styles/form.css';
 const AddProduct = () => {
   const [formData, setFormData] = useState({ 
     name: '', 
-    brand: '', 
+    sku: '', 
     memory: '',
     color: '',
     price: '', 
@@ -34,7 +34,7 @@ const AddProduct = () => {
       </button>
 
       <form onSubmit={handleSubmit}>
-        <input type="text" name="brand" placeholder="SKU" onChange={handleChange} required />
+        <input type="text" name="sku" placeholder="SKU" onChange={handleChange} required />
         <input type="text" name="name" placeholder="Name" onChange={handleChange} required />  
         <input type="text" name="memory" placeholder="Memory (e.g., 128GB)" onChange={handleChange} required />
         <input type="text" name="color" placeholder="Color" onChange={handleChange} required />      
