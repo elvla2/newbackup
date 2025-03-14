@@ -48,4 +48,45 @@ router.get('/totals', async (req, res) => {
   }
 });
 
+//Delete a phone
+router.delete('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const deletedItem = await pool.query('DELETE FROM phones WHERE id = $1 RETURNING *', [id]);
+
+    if (deletedItem.rows.length === 0) {
+      return res.status(404).json({ error: 'Item not found' });
+    }
+
+    res.json({ message: 'Item deleted successfully' });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+});
+
+//Edit a phone
+router.put('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { sku, name, memory, color, stock, price } = req.body;
+
+    const updatedItem = await pool.query(
+      `UPDATE phones SET sku = $1, name = $2, memory = $3, color = $4, stock = $5, price = $6 WHERE id = $7 RETURNING *`,
+      [sku, name, memory, color, stock, price, id]
+    );
+
+    if (updatedItem.rows.length === 0) {
+      return res.status(404).json({ error: 'Item not found' });
+    }
+
+    res.json(updatedItem.rows[0]);
+  } catch (err) {
+    console.error("Update error:", err.message);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+
 module.exports = router;
