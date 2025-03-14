@@ -4,7 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/form.css';
 
 const AddProduct = () => {
-  const [formData, setFormData] = useState({ name: '', brand: '', price: '', stock: '' });
+  const [formData, setFormData] = useState({ 
+    name: '', 
+    brand: '', 
+    memory: '',
+    color: '',
+    price: '', 
+    stock: '' 
+  });
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -28,7 +35,9 @@ const AddProduct = () => {
 
       <form onSubmit={handleSubmit}>
         <input type="text" name="brand" placeholder="SKU" onChange={handleChange} required />
-        <input type="text" name="name" placeholder="Name" onChange={handleChange} required />        
+        <input type="text" name="name" placeholder="Name" onChange={handleChange} required />  
+        <input type="text" name="memory" placeholder="Memory (e.g., 128GB)" onChange={handleChange} required />
+        <input type="text" name="color" placeholder="Color" onChange={handleChange} required />      
         <input type="number" name="price" placeholder="Cost" onChange={handleChange} required />
         <input type="number" name="stock" placeholder="Stock" onChange={handleChange} required />
         <button type="submit">Add Phone</button>

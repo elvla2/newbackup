@@ -32,6 +32,8 @@ const InventoryList = () => {
           <tr>
             <th>SKU</th> {/* Changed from Brand to Name */}
             <th>Item Name</th> {/* This was previously Name */}
+            <th>memory</th>
+            <th>color</th>
             <th>Stock</th>
             <th>Cost</th>
             <th>Total Value (Stock × Price)</th>
@@ -42,6 +44,8 @@ const InventoryList = () => {
             <tr key={item.id}>
               <td>{item.brand}</td>
               <td>{item.name}</td>
+              <td>{item.memory}</td>
+              <td>{item.color}</td>
               <td>{item.stock}</td>
               <td>${item.price}</td>
               <td>${(item.stock * item.price).toFixed(2)}</td>
